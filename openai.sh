@@ -4,7 +4,7 @@ ENDPOINT=https://api.openai.com/v1
 
 call() {
   if [[ -z "$OPENAI_KEY" ]]; then
-    echo 'missing "OPENAI_KEY" environment variables'
+    echo 'missing "OPENAI_KEY" environment variables' 1>&2
     exit 1
   fi
 

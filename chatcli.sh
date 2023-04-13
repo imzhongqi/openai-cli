@@ -6,7 +6,11 @@ set -e
 
 messages=()
 
-histories=($(cat ./.chat_history 2>/dev/null))
+histories=()
+
+if [[ -f ./.chat_history ]]; then
+  histories+=($(cat ./.chat_history 2>/dev/null))
+fi
 
 # load history to messages
 messages+=("$(echo "${histories[*]}" | jq -src '.[]' )")

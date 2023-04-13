@@ -4,9 +4,6 @@ set -e
 
 . ./openai.sh
 
-# replace your api key
-export OPENAI_KEY=sk-xxx
-
 messages=()
 
 histories=($(cat ./.chat_history 2>/dev/null))

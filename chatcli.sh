@@ -69,7 +69,7 @@ process_completions() {
   query=$(jq -nc --arg content "$input" '{"role": "user", "content": $content}')
   messages+=("$query")
 
-  message=$(completions gpt-3.5-turbo "$(echo "${messages[@]}" | jq -src '.')" | jq -rc '.choices[0].message')
+  message=$(chat::completions gpt-3.5-turbo "$(echo "${messages[@]}" | jq -src '.')" | jq -rc '.choices[0].message')
   messages+=("$message")
 
   echo "$message" | jq -r '.content' | bat --language markdown --plain --unbuffered --wrap character

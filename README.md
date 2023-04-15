@@ -5,6 +5,6 @@
 - jq
 
 ```shell
-export OPENAI_KEY=sk-xxx
+export OPENAI_API_KEY=sk-xxx
 ./chatcli.sh
 ```

@@ -43,7 +43,7 @@ process_input() {
     ;;
 
   "get "*)
-    get "${input:4}"
+    openai::get "${input:4}"
     ;;
 
   exit)

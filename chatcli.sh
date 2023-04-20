@@ -77,7 +77,5 @@ process_completions() {
   write_history "$query" "$message"
 }
 
-while echo -en "\033[0;35m❯\033[0m " && read -r input; do
-  process_input "$input"
-done
+process_input "$*"
 
